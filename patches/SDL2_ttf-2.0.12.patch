@@ -1,0 +1,12 @@
+diff -burN SDL2_ttf-2.0.12/Makefile.in SDL2_ttf-2.0.12-PS3/Makefile.in
+--- SDL2_ttf-2.0.12/Makefile.in	2013-08-10 13:42:09.000000000 -0400
++++ SDL2_ttf-2.0.12-PS3/Makefile.in	2013-12-04 21:58:51.114011995 -0500
+@@ -55,7 +55,7 @@
+ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+-noinst_PROGRAMS = showfont$(EXEEXT) glfont$(EXEEXT)
++noinst_PROGRAMS =
+ subdir = .
+ DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
+ 	$(top_srcdir)/configure $(am__configure_deps) \

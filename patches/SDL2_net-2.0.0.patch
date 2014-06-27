@@ -1,0 +1,26 @@
+diff -burN SDL2_net-2.0.0/SDLnetsys.h SDL2_net-2.0.0-PS3/SDLnetsys.h
+--- SDL2_net-2.0.0/SDLnetsys.h	2013-08-10 13:41:30.000000000 -0400
++++ SDL2_net-2.0.0-PS3/SDLnetsys.h	2013-12-06 21:30:20.156063242 -0500
+@@ -49,7 +49,12 @@
+ #ifdef __FreeBSD__
+ #include <sys/socket.h>
+ #endif
++/* There is no sys/ioctl.h, netinet/tcp.h or net/if.h for our toolchain */
++#ifndef __lv2ppu__
+ #include <sys/ioctl.h>
++#include <netinet/tcp.h>
++#include <net/if.h>
++#endif
+ #include <sys/time.h>
+ #include <unistd.h>
+ #include <fcntl.h>
+@@ -57,9 +62,7 @@
+ #ifndef __BEOS__
+ #include <arpa/inet.h>
+ #endif
+-#include <netinet/tcp.h>
+ #include <sys/socket.h>
+-#include <net/if.h>
+ #include <netdb.h>
+ #endif /* WIN32 */
+ 
